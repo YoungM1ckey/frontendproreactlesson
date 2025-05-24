@@ -40,3 +40,17 @@
 .no-select {
   user-select: none;
 }
+
+html.light {
+  --header-bg: #f5f5f5;
+  --header-text: #000000;
+  --footer-bg: #f5f5f5;
+  --footer-text: #000000;
+}
+
+html.dark {
+  --header-bg: #333333;
+  --header-text: #ffffff;
+  --footer-bg: #333333;
+  --footer-text: #ffffff;
+}
