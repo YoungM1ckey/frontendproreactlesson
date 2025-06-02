@@ -27,7 +27,7 @@ const Header = () => {
                     </li>
                     <li className={styles.navItem}>
                         <NavLink to="/smiles" className={({ isActive }) => isActive ? styles.activeNavLink : styles.navLink}>
-                            Smiles Page
+                            Todo
                         </NavLink>
                     </li>
                 </ul>

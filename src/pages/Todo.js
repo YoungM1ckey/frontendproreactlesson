@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Home = () => {
+const Todo = () => {
     return (
         <div>
-            <h2>Hello user !!!</h2>
+            <h2>Hello</h2>
         </div>
     );
 };
 
-export default Home;
+export default Todo;
