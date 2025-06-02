@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSmiles } from '../contexts/SmilesContext';
-import styles from './Smiles.module.css';
 
 function Smiles() {
     const { smiles, result, vote, showResults, clearResults } = useSmiles();

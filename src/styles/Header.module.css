@@ -1,0 +1,54 @@
+.header {
+    background-color: #282c34;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.navList {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.navItem {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.navLink {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navLink:hover {
+    color: #61dafb;
+}
+
+.activeNavLink {
+    color: #61dafb;
+    border-bottom: 2px solid #61dafb;
+    padding-bottom: 3px;
+}
+
+.themeButton {
+    margin-left: auto;
+    background-color: transparent;
+    border: 1px solid #61dafb;
+    color: #61dafb;
+    padding: 6px 12px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.themeButton:hover {
+    background-color: rgba(97, 218, 251, 0.1);
+}
