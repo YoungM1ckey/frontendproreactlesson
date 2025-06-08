@@ -26,7 +26,7 @@ const Header = () => {
                         </NavLink>
                     </li>
                     <li className={styles.navItem}>
-                        <NavLink to="/smiles" className={({ isActive }) => isActive ? styles.activeNavLink : styles.navLink}>
+                        <NavLink to="/todo" className={({ isActive }) => isActive ? styles.activeNavLink : styles.navLink}>
                             Todo
                         </NavLink>
                     </li>

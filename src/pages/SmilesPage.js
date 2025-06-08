@@ -8,7 +8,7 @@ const SmilesPage = () => {
 
     return (
         <div className={styles.smilesContainer}>
-            <h2>Голосуй за смайли!</h2>
+            <h2>Vote for the emoticons!</h2>
             <ul className={styles.smileList}>
                 {smiles.map((s, i) => (
                     <li key={i} className={styles.smileItem}>
@@ -18,8 +18,8 @@ const SmilesPage = () => {
                 ))}
             </ul>
             <div className={styles.buttons}>
-                <button onClick={showResults}>Показати результати</button>
-                <button onClick={clearResults}>Очистити</button>
+                <button onClick={showResults}>Show results</button>
+                <button onClick={clearResults}>Clear</button>
             </div>
             {result && <h3 className={styles.result}>{result}</h3>}
         </div>
