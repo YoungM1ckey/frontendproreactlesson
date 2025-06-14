@@ -1,78 +1,37 @@
-.todoContainer {
-    max-width: 480px;
+.container {
+    max-width: 600px;
     margin: 40px auto;
-    background-color: #fafafa;
-    padding: 20px 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgb(0 0 0 / 0.1);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #222;
 }
 
-.todoTitle {
+h2 {
     margin-bottom: 20px;
+    color: #007bff;
     text-align: center;
-    font-size: 1.8rem;
-    color: #0e5c71;
 }
 
-.todoForm {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 18px;
-}
-
-.todoInput {
-    flex-grow: 1;
-    padding: 10px 14px;
-    font-size: 1rem;
-    border: 1.8px solid #ccc;
-    border-radius: 6px;
-    transition: border-color 0.3s ease;
-}
-
-.todoInput:focus {
-    outline: none;
-    border-color: #0e5c71;
-}
-
-.todoButton {
-    padding: 10px 22px;
-    font-weight: 600;
-    font-size: 1rem;
-    background-color: #0e5c71;
-    border: none;
-    border-radius: 6px;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.25s ease;
-}
-
-.todoButton:hover {
-    background-color: #0e5c71;
-}
-
-.todoList {
+.list {
     list-style: none;
     padding-left: 0;
-    max-height: 280px;
+    max-height: 400px;
     overflow-y: auto;
 }
 
-.todoItem {
-    background-color: #e2e8f0;
-    padding: 8px 14px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    font-size: 1.1rem;
+.item {
     display: flex;
     align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 1rem;
 }
 
-.todoFooter {
-    margin-top: 20px;
-    text-align: center;
-    font-weight: 600;
-    font-size: 1.15rem;
-    color: #555;
+.completed {
+    text-decoration: line-through;
+    color: #999;
 }

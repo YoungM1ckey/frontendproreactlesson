@@ -1,46 +1,31 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { addTodo } from '../redux/actions';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchTodos } from '../redux/actions/todoActions';
 import styles from '../styles/Todo.module.css';
 
-const TodoPage = () => {
-    const [text, setText] = useState('');
+const TodoListPage = () => {
     const dispatch = useDispatch();
-    const todos = useSelector(state => state.todos);
+    const { todos, loading, error } = useSelector(state => state.todo);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (text.trim()) {
-            dispatch(addTodo(text));
-            setText('');
-        }
-    };
+    useEffect(() => {
+        dispatch(fetchTodos());
+    }, [dispatch]);
 
     return (
-        <div className={styles.todoContainer}>
-            <h2 className={styles.todoTitle}>TODO</h2>
-            <form className={styles.todoForm} onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    value={text}
-                    placeholder="Add a task"
-                    onChange={e => setText(e.target.value)}
-                    className={styles.todoInput}
-                />
-                <button type="submit" className={styles.todoButton}>Add</button>
-            </form>
-
-            <ul className={styles.todoList}>
+        <div className={styles.container}>
+            <h2>Todo List</h2>
+            {loading && <p>Loading tasks...</p>}
+            {error && <p style={{ color: 'red' }}>Error: {error}</p>}
+            <ul className={styles.list}>
                 {todos.map(todo => (
-                    <li key={todo.id} className={styles.todoItem}>📝 {todo.text}</li>
+                    <li key={todo.id} className={styles.item}>
+                        <input type="checkbox" checked={todo.completed} readOnly />
+                        <span className={todo.completed ? styles.completed : ''}>{todo.title}</span>
+                    </li>
                 ))}
             </ul>
-
-            <footer className={styles.todoFooter}>
-                Total tasks: {todos.length}
-            </footer>
         </div>
     );
 };
 
-export default TodoPage;
+export default TodoListPage;
