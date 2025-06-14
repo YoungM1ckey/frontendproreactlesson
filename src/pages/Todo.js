@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchTodos } from '../redux/actions/todoActions';
+import { fetchTodos, toggleTodo } from '../redux/actions/todoActions';
 import styles from '../styles/Todo.module.css';
+
 
 const TodoListPage = () => {
     const dispatch = useDispatch();
@@ -19,7 +20,10 @@ const TodoListPage = () => {
             <ul className={styles.list}>
                 {todos.map(todo => (
                     <li key={todo.id} className={styles.item}>
-                        <input type="checkbox" checked={todo.completed} readOnly />
+                        <input type="checkbox"
+                               checked={todo.completed}
+                               onChange={() => dispatch(toggleTodo(todo.id))}
+                        />
                         <span className={todo.completed ? styles.completed : ''}>{todo.title}</span>
                     </li>
                 ))}

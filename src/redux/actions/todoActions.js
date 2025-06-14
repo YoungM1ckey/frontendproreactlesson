@@ -6,6 +6,7 @@ export const fetchTodosRequest = () => ({ type: FETCH_TODOS_REQUEST });
 export const fetchTodosSuccess = (todos) => ({ type: FETCH_TODOS_SUCCESS, payload: todos });
 export const fetchTodosFailure = (error) => ({ type: FETCH_TODOS_FAILURE, payload: error });
 
+
 export const fetchTodos = () => {
     return async (dispatch) => {
         dispatch(fetchTodosRequest());
@@ -19,3 +20,11 @@ export const fetchTodos = () => {
         }
     };
 };
+
+export const TOGGLE_TODO = 'TOGGLE_TODO';
+
+export const toggleTodo = (id) => ({
+    type: TOGGLE_TODO,
+    payload: id,
+});
+

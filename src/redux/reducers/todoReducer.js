@@ -1,4 +1,6 @@
-import { FETCH_TODOS_REQUEST, FETCH_TODOS_SUCCESS, FETCH_TODOS_FAILURE } from '../actions/todoActions';
+import { FETCH_TODOS_REQUEST, FETCH_TODOS_SUCCESS, FETCH_TODOS_FAILURE, TOGGLE_TODO } from '../actions/todoActions';
+
+
 
 const initialState = {
     loading: false,
@@ -16,5 +18,14 @@ export default function todoReducer(state = initialState, action) {
             return { ...state, loading: false, error: action.payload };
         default:
             return state;
+        case TOGGLE_TODO:
+            return {
+                ...state,
+                todos: state.todos.map(todo =>
+                    todo.id === action.payload
+                        ? { ...todo, completed: !todo.completed }
+                        : todo
+                ),
+            };
     }
 }
